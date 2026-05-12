@@ -1,1 +1,9 @@
+name: cicd pipeline
+on: workflow_dispatch
+jobs:
+  call-ci:
+      uses: arif511basha/Reusable-CI-workflow/.github/workflows/ci.yml@main
 
+  call-cd:
+      needs: call-ci
+      uses: arif511basha/Reusable-CD-workflow/.github/workflows/cd.yml@main
